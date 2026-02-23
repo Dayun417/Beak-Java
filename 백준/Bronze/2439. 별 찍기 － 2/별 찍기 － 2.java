@@ -1,21 +1,20 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
-        int n = sc.nextInt();
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(bf.readLine());
 
         for(int i=0;i<n;i++) {
-            for(int j=0;j<n-i-1;j++) {
+            for(int j=n-i-1;j>0;j--){
                 System.out.print(" ");
             }
-            for(int k=0;k<=i;k++) {
+
+            for(int j=0;j<=i;j++) {
                 System.out.print("*");
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 }
