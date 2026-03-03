@@ -1,27 +1,29 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
-class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int n, cnt=0;
-        n = sc.nextInt();
-        int arr[] = new int[n];
-        int v;
+        int n = Integer.parseInt(br.readLine());
 
-        for(int i=0;i<arr.length;i++) {
-            arr[i] = sc.nextInt();
-        }
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        v = sc.nextInt();
-        
-        for(int i=0;i<arr.length;i++) {
-            if(v==arr[i]) {
+        int v = Integer.parseInt(br.readLine());
+
+        int cnt = 0;
+
+        for(int i=0;i<n;i++) {
+            int s = Integer.parseInt(st.nextToken());
+            
+            if(v==s) {
                 cnt++;
             }
         }
+
         System.out.println(cnt);
+
     }
 }
